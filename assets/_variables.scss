@@ -1,0 +1,193 @@
+//Nota inportante todas las variables de cada pagina de la aplicacion estaran enserradas en "//"
+// y las variables de los componentes  unicos de cada pagina seran "/*  */"
+// esto solo sera en la parte de arriba antes "@media screen" alli se pierde el orden
+// si te preguntas porque es por que me dio pereza xD
+// si tu quieres ordenarlo haslo y borra esa parte gracias :D
+// todas las variables de componentes que se usan en mas de una pigina iran a globales directamente
+
+/* letras */
+@font-face {
+  font-family: "Galano";
+  src: url("../static/GalanoGrotesqueDEMO-Bold.woff") format("woff2"),
+    url("../static/GalanoGrotesqueDEMO-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helveltica";
+  src: url("../static/HelveticaNeue-Light.woff2") format("woff2"),
+    url("../static/HelveticaNeue-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* mixins */
+@mixin titulo {
+  font-family: "Galano";
+}
+@mixin contenido {
+  font-family: "Helveltica";
+}
+
+/* variables */
+:root {
+  // globales
+  --color-morado: #0028bf;
+  --color-morado-2: #4127df;
+  --color-de-selc: #f3f3f3;
+  --tamano-de-flecha-de-selec: 25px;
+  --tamano-de-tres-puntos: 5px;
+  --tamano-del-mas: 35px;
+  --posicion-del-mas: -10px;
+  --posicion-de-boton-de-carrusel: -19px;
+  --footer-tamano-de-tres-lineas: 16px;
+
+  --color-azul: #0028bf;
+  --color-azul-2: #00c2ff;
+  --titulo: "Galano";
+  --contenido: "Helveltica";
+  --tamano-h2-targeta-decorativa: 18px;
+  --color-de-footer: #444444;
+  --color-de-buscador: #f8f8f8;
+  --color-boton-de-componente: #838383;
+  --color-de-files: #ececec;
+  --tamano-de-logo-de-red-social: 32px;
+  --tamano-delogin: 40%;
+  --color-boton-azul: #002dce0f;
+
+  // inicio
+  /* inicio */
+  --subrayado: 0;
+  --tamano-de-globos: 75px;
+  --tamano-de-titulo-e-input: 100%;
+  --tamano-de-ciudad: auto;
+  --ubicacion-de-cuadrados: -8%;
+  --tamano-de-titulo-de-inicio: 33px;
+  --tamano-de-img-de-inicio: 450px;
+  --margen-de-img-de-inicio: 100px;
+  --tamano-de-mas-de-inicio: 60px;
+
+  /* populares */
+  --tamano-de-pelota-del-rango: 15px;
+  --tamano-del-dolar-del-rango: 15px;
+
+  /* usuarios */
+  --tamano-de-palos-svg: 100px;
+  --ubicacion-de-palos-y: 20%;
+
+  /* integracion */
+  --tamano-de-la-integracion-columnas: 1000px;
+  --tamano-de-la-integracion: none;
+
+  /* automatizar */
+  --tamano-de-palos-de-libro: 24px;
+  --ubicacion-de-palos-de-libro: -24px;
+
+  /* desarrolladores */
+  // fin inicio
+
+  // buscador
+  /* buscador */
+  --tamano-de-buscador: 50%;
+
+  /* componentes */
+  --separacion-de-boton-on-off: 20px;
+  --separacion-de-botones-de-lista: 20px;
+  --padding-de-botones-de-lista: 50px;
+  --left-pocicion: 43px;
+
+  /* navegacion */
+  --height-navegacionheight: 400px;
+
+  /* Interfaz Grafica */
+  --tamano-de-pestanas-de-interfas: 80%;
+  --tamano-de-imagen-de-subida: 60px;
+  // fin buscador
+
+  // api
+  /* conexion */
+  --tamano-de-h: 18;
+  // fin api
+
+  /* lg */
+  @media screen and (max-width: 1904px) {
+    /* inicio */
+    --tamano-de-ciudad: 1904px;
+  }
+  /* md */
+  @media screen and (max-width: 1264px) {
+    // globales
+    --desaparecer-en-celulares: flex;
+    --pading-header: 50px;
+    --margin-de-botones-de-header: 20px;
+    --tamano-de-footer: 300px;
+
+    /* inicio */
+    --tamano-de-ciudad: auto;
+    --alinear-lista-de-inicio: none;
+
+    /* usuarios */
+    --tamano-de-imagen-de-usuario-x: 10rem;
+    --tamano-de-imagen-de-usuario-y: 6.5rem;
+    --ubicacion-de-palos-y: 20%;
+
+    /* desarrolladores */
+  }
+  /* sm */
+  @media screen and (max-width: 960px) {
+    // inicio
+    --tamano-de-titulo-e-input: 85%;
+    --tamano-de-titulo-de-inicio: 31px;
+    --alinear-lista-de-inicio: center;
+    --margen-de-img-de-inicio: 50px;
+
+    // globales
+    --desaparecer-en-celulares: none;
+    --desaparecer-en-celulares-pequenos: flex;
+    --tamano-letra-targeta-decorativa: 13px;
+    --pading-header: 5px;
+    --margin-de-botones-de-header: 5px;
+    --tamano-de-footer: auto;
+    --tamano-delogin: 75%;
+
+    /* usuarios */
+    --tamano-de-imagen-de-usuario-x: 8rem;
+    --tamano-de-imagen-de-usuario-y: 5rem;
+    --ubicacion-de-palos-y: 10%;
+
+    /* integracion */
+    --tamano-de-la-integracion-columnas: auto;
+    --tamano-de-la-integracion: 800px;
+
+    /* desarrolladores */
+
+    /* buscador */
+    --tamano-de-buscador: 75%;
+
+    /* componentes */
+    --separacion-de-botones-de-lista: 0;
+
+    /* navegacion */
+  }
+  /* xs */
+  @media screen and (max-width: 600px) {
+    // inicio
+    --tamano-de-titulo-e-input: 100%;
+    --margen-de-img-de-inicio: -10px;
+    --tamano-de-img-de-inicio: 385px;
+
+    /* usuario */
+    --ubicacion-de-palos-y: 18%;
+
+    /* globales */
+    --desaparecer-en-celulares-pequenos: none;
+    --tamano-delogin: 100%;
+
+    /* componentes */
+    --separacion-de-boton-on-off: 0px;
+    --padding-de-botones-de-lista: 0px;
+
+    /* Interfaz Grafica */
+    --tamano-de-pestanas-de-interfas: 100%;
+  }
+}
