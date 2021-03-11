@@ -45,7 +45,7 @@ export default {
 }
 
 .lista_videos {
-  background-color: #fff;
+  background-color: #ffff;
   color: #000;
   border-radius: 10px;
   width: 90%;
