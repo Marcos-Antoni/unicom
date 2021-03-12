@@ -14,6 +14,11 @@
               <ListaDeVideos :curso="ListaCurso" />
             </section>
           </v-col>
+          <v-col cols="8" class="col3">
+            <section class="descripcion_del_curso">
+              <Descripcion />
+            </section>
+          </v-col>
         </v-row>
       </div>
     </div>
@@ -33,6 +38,7 @@ import VideoV from "../../../components/curso/VideoV";
 import Datos from "../../../components/globales/Datos";
 import FooterV from "../../../components/header/FooterV.vue";
 import FondoGris from "../../../components/globales/FondoGris";
+import Descripcion from "../../../components/curso/Descripcion";
 import ListaDeVideos from "../../../components/curso/ListaDeVideos";
 import { mapState } from "vuex";
 
@@ -42,7 +48,8 @@ export default {
     VideoV,
     FooterV,
     FondoGris,
-    ListaDeVideos
+    ListaDeVideos,
+    Descripcion
   },
 
   data() {
@@ -74,7 +81,7 @@ export default {
 <style lang="scss">
 /* variables */
 :root {
-  --margen-top: 60px;
+  --margen-top: 120px;
 }
 
 /* mixins */
@@ -84,7 +91,6 @@ export default {
   content: "";
 }
 .curso {
-  color: #fff;
   position: relative;
   margin: 0;
 
@@ -107,12 +113,13 @@ export default {
     justify-content: center;
 
     .sub-contenedor {
-      width: 96%;
+      width: 97%;
       height: auto;
       position: relative;
 
       .col1 {
         padding-right: 0;
+        height: 500px;
         z-index: 5;
 
         .video {
@@ -124,20 +131,28 @@ export default {
       .col2 {
         padding-left: 0;
         z-index: 5;
-
+        height: 850px;
         .carrusel_de_videos {
           height: auto;
           margin-top: var(--margen-top);
         }
       }
 
+      .col3 {
+        height: auto;
+        margin-top: -250px;
+        .descripcion_del_curso {
+          height: auto;
+        }
+      }
+
       &::after {
         @include affter();
-        background-color: #131313;
+        background-color: var(--color-negro-de-videos);
         width: 100%;
         height: 500px;
         left: 3px;
-        top: 15px;
+        top: 60px;
         border-radius: 10px;
 
         z-index: 1;

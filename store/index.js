@@ -146,27 +146,6 @@ export const state = () => ({
         { url: "", disponible: true, porsentage: 85, nombre: "curso 3" },
         { url: "", disponible: false, porsentage: 0, nombre: "curso 4" }
       ]
-    },
-    {
-      titulo: "Pc1",
-      videos: [
-        { url: "", disponible: true, porsentage: 85, nombre: "curso 3" },
-        { url: "", disponible: false, porsentage: 0, nombre: "curso 4" }
-      ]
-    },
-    {
-      titulo: "Pc1",
-      videos: [
-        { url: "", disponible: true, porsentage: 85, nombre: "curso 3" },
-        { url: "", disponible: false, porsentage: 0, nombre: "curso 4" }
-      ]
-    },
-    {
-      titulo: "Pc1",
-      videos: [
-        { url: "", disponible: true, porsentage: 85, nombre: "curso 3" },
-        { url: "", disponible: false, porsentage: 0, nombre: "curso 4" }
-      ]
     }
   ],
   gratis: false,
