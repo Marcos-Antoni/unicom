@@ -61,6 +61,11 @@ export default {
   --tamano-de-boton-de-reproducuir: 40px;
   --tamano-de-boton-de-chequesito: 30px;
   --tamano-de-boton-de-candado: 30px;
+  --tamano-contenido: 90%;
+
+  @media screen and (max-width: 1170px) {
+    --tamano-contenido: 100%;
+  }
 }
 
 /* mixins */
@@ -75,11 +80,16 @@ export default {
     background-color: #fff;
     color: #000;
     border-radius: 5px 10px;
-    width: 90%;
+    width: var(--tamano-contenido);
     max-height: 608px;
     overflow-y: scroll;
 
     box-shadow: var(--color-negro-de-videos) 0px 0px 20px;
+
+    @media screen and (max-width: 960px) {
+      box-shadow: none;
+      max-height: 160px;
+    }
 
     &::-webkit-scrollbar {
       width: 8px;
@@ -195,7 +205,7 @@ export default {
 
   .boton-preguntas {
     margin-top: 50px;
-    width: 90%;
+    width: var(--tamano-contenido);
     height: 50px;
     background-color: #f3f3f3;
     font-family: "Galano";

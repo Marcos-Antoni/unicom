@@ -2,11 +2,11 @@
   <div class="Decripcion_curso">
     <div class="curso_titulo">
       <h2>Curso Calculo 3 - INTRODUCCIÓN</h2>
-      <p>
+      <p class="descripcion_p">
         Aprende todo lo necesario para el curso de cálculo 3, te daremos todas
         las fijas, el momento es ahora !
       </p>
-      <Puntuacion />
+      <Puntuacion :votos="250" />
     </div>
     <div class="material_del_curso">
       <h3>Recursos de la clase</h3>
@@ -42,19 +42,74 @@ export default {
 </script>
 
 <style lang="scss">
+/* variables */
 :root {
   --tamano-de-fotos-de-contenido: 210px;
+  --tamano-de-foto-de-univercidad: 50px;
+  --tamano-de-titulo-de-video: 30px;
+  --alinear-text: none;
+  --width-titulo: 50%;
+  --width-descripcion: 70%;
+  --margin-left-titulo: 0;
+  --quitar-margin-de-h: 0;
+  --after-univercidad-top: 28%;
+  --after-univercidad-right: -65px;
+
+  @media screen and (max-width: 960px) {
+    --width-titulo: 90%;
+  }
+
+  @media screen and (max-width: 520px) {
+    --tamano-de-titulo-de-video: 27px;
+    --width-titulo: 90%;
+  }
+  @media screen and (max-width: 500px) {
+    --alinear-text: center;
+    --width-titulo: 90%;
+    --width-descripcion: 100%;
+    --margin-left-titulo: 20px;
+    --quitar-margin-de-h: -20px;
+    --after-univercidad-top: 60px;
+    --after-univercidad-right: 0px;
+  }
+  @media screen and (max-width: 471px) {
+    --after-univercidad-top: -64px;
+    --after-univercidad-right: -44px;
+  }
+}
+
+/* mixins */
+@mixin affter {
+  position: absolute;
+  display: block;
+  content: "";
 }
 
 .Decripcion_curso {
   .curso_titulo {
+    margin-left: var(--margin-left-titulo);
+
     h2 {
-      font-size: 30px;
+      font-size: var(--tamano-de-titulo-de-video);
+      text-align: var(--alinear-text);
+      margin-left: var(--quitar-margin-de-h);
     }
 
-    p {
-      width: 50%;
+    .descripcion_p {
+      position: relative;
+      width: var(--width-titulo);
       margin-bottom: 3px;
+
+      &::after {
+        @include affter();
+        background-image: url(/cursos/academia.svg);
+        background-size: var(--tamano-de-foto-de-univercidad);
+        width: var(--tamano-de-foto-de-univercidad);
+        height: var(--tamano-de-foto-de-univercidad);
+
+        right: var(--after-univercidad-right);
+        top: var(--after-univercidad-top);
+      }
     }
   }
 
@@ -66,10 +121,12 @@ export default {
     h3 {
       margin-bottom: 10px;
       font-size: 25px;
+      text-align: var(--alinear-text);
+      margin-left: var(--quitar-margin-de-h);
     }
 
     p {
-      width: 70%;
+      width: var(--width-descripcion);
       margin-bottom: 25px;
     }
 

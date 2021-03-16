@@ -27,7 +27,8 @@ export default {
 
 .Descripcion {
   height: 250px;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   background-color: #f8f8f8;
   z-index: 1;
 
@@ -49,7 +50,7 @@ export default {
     width: 33px;
     height: 54px;
     top: 75px;
-    right: 12px;
+    right: 0;
   }
 
   .contenido {

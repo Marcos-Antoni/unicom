@@ -53,8 +53,16 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --tamano-video-height: 400px;
+  --tamano-video-width: 100%;
+
+  @media screen and (max-width: 500px) {
+    --tamano-video-height: 200px;
+  }
+}
 .reproductor {
-  width: 100%;
-  height: 400px;
+  width: var(--tamano-video-width);
+  height: var(--tamano-video-height);
 }
 </style>

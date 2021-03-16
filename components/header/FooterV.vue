@@ -34,8 +34,8 @@
         <p>Incubadora x</p>
       </v-col>
 
-      <v-col cols="9" class="color1 color"> </v-col>
-      <v-col cols="3" class="color2 color"> </v-col>
+      <v-col cols="8" class="color1 color"></v-col>
+      <v-col cols="4" class="color2 color"></v-col>
     </v-row>
   </div>
 </template>
@@ -77,6 +77,12 @@ export default {
 </script>
 
 <style lang="scss">
+/* variables */
+:root {
+  --tamano-height: 30px;
+}
+
+/* mixin */
 @mixin affter {
   position: absolute;
   display: block;
@@ -95,8 +101,9 @@ export default {
 
   .columnas {
     height: 75%;
-    background-color: var(--color-de-footer);
-
+    width: 100vw;
+    padding: 0;
+    margin: 0;
     @media screen and (max-width: 960px) {
       height: auto;
     }
