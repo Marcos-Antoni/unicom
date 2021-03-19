@@ -1,60 +1,37 @@
 <template>
   <header class="arriba">
     <v-row class="contenedor-arriba">
-      <v-col cols="2" xl="1" class="columna-titulo">
-        <v-btn @click.stop="drawer = !drawer" icon class="menu">
-          <v-icon>mdi-menu</v-icon>
-        </v-btn>
-        <h1>kav.ia</h1>
-        <img src="/logoKavIa.svg" class="logo" />
+      <v-col cols="12" class="oferta-limitada-header">
+        <h2>¡OFERTAS! - Quedan 17 horas con 34 minutos</h2>
       </v-col>
-      <v-col cols="4" class="columnas-lista">
-        <nav class="navegacion">
-          <ul class="lista">
-            <li v-for="(link, numero) in links" :key="numero">
-              <nuxt-link class="link" :to="link.url">
-                {{ link.nombre }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </nav>
+
+      <v-col cols="2" class="columna-titulo">
+        <h1><span class="h1_span">UN</span>icom</h1>
       </v-col>
-      <v-col cols="6" class="columnas-login">
-        <v-btn class="boton registro">registro</v-btn>
-        <v-btn class="boton login" @click="loguiar">login</v-btn>
+
+      <v-col cols="10" class="columnas-login">
+        <button
+          class="boton login"
+          @click="
+            () => {
+              loguiar();
+            }
+          "
+        >
+          Iniciar cecion
+        </button>
+        <button class="boton registro">
+          Regístrate
+        </button>
       </v-col>
     </v-row>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list>
-        <v-list-item
-          v-for="(link, numero) in links"
-          :key="numero"
-          class="menu-oculto"
-        >
-          <v-list-item-content>
-            <v-list-item-title>
-              <nuxt-link class="link" :to="link.url">
-                {{ link.nombre }}
-              </nuxt-link>
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
   </header>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      drawer: null,
-      links: [
-        { url: "#", nombre: "Explorar" },
-        { url: "#", nombre: "Subir mi API" },
-        { url: "#", nombre: "Soporte" }
-      ]
-    };
+    return {};
   },
   methods: {
     loguiar() {
@@ -67,10 +44,70 @@ export default {
 </script>
 
 <style lang="scss">
+// variables
+:root {
+  --color-de-oferta-degradado: linear-gradient(
+    89.43deg,
+    #ff4d00 1.15%,
+    #ffb800 76.51%
+  );
+
+  --color-boton-registro-amarillo: #ffb800;
+  --letra-naranja: #ff4c00;
+  --height-header: 50px;
+
+  --letra-header: #000;
+  --fondo-header: #000;
+
+  --antes-x: 125px;
+  --antes-y: 60%;
+  --despues-x: 135px;
+  --despues-y: 70%;
+
+  --margen-botones-header: 20px;
+  --margen-h1-header: 20px;
+
+  --tamano-de-h1-header: 25px;
+  --tamano-de-h2-ofertas-header: 17px;
+
+  @media screen and (max-width: 500px) {
+    --margen-botones-header: 1px;
+    --margen-h1-header: 5px;
+    --antes-x: 100px;
+    --despues-x: 110px;
+    --tamano-de-h1-header: 21px;
+  }
+
+  @media screen and (max-width: 372px) {
+    --tamano-de-h2-ofertas-header: 13px;
+  }
+}
+
+// animaciones
+
+/* @keyframes quitar-colores {
+  from {
+    color: var(--letra-header);
+    background-color: var(--fondo-header);
+  }
+
+  to {
+    color: var(--fondo-header);
+    background-color: var(--letra-header);
+  }
+} */
+
+// mixin
+@mixin pading-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .arriba {
-  height: 53px;
-  width: 100%;
-  // max-width: 100vw;
+  height: 85px;
+  width: 100vw;
+  max-width: 100vw;
+  min-width: 100vw;
   display: block;
   background: #fff;
   box-shadow: 0 1px 10px #ccc;
@@ -78,99 +115,117 @@ export default {
 
   .contenedor-arriba {
     width: 100%;
+    margin: 0;
 
     .col {
       padding-bottom: 0;
     }
-    .col-xl-1 {
-      padding-bottom: 0;
+
+    .oferta-limitada-header {
+      background: var(--color-de-oferta-degradado);
+      height: 35px;
+      width: 100vw;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        font-size: var(--tamano-de-h2-ofertas-header);
+      }
     }
 
     .columna-titulo {
-      padding-left: var(--pading-header);
       display: flex;
       align-items: center;
-      @media screen and (max-width: 1904px) {
-        justify-content: flex-end;
+      justify-content: space-between;
+
+      @media screen and(max-width:500px) {
+        padding: 0px;
       }
-      @media screen and (max-width: 1264px) {
-        justify-content: flex-start;
-      }
-      .menu {
-        display: none;
-        @media screen and (max-width: 960px) {
-          display: block;
-        }
-      }
+
+      height: var(--height-header);
+      @include pading-0();
+
       h1 {
-        font-size: 25px;
+        font-size: var(--tamano-de-h1-header);
+        margin-left: var(--margen-h1-header);
+
+        .h1_span {
+          color: var(--letra-naranja);
+          font-family: "Galano";
+        }
       }
       .logo {
         padding-left: 10px;
       }
     }
 
-    .columnas-lista {
-      display: flex;
-      align-items: center;
-
-      .navegacion {
-        width: 100%;
-        display: flex;
-        align-items: center;
-
-        @media screen and (max-width: 960px) {
-          display: none;
-        }
-
-        .lista {
-          width: 100%;
-          display: flex;
-
-          li {
-            margin-right: 20px;
-            .link {
-              font-family: "Galano";
-              color: #090909;
-              text-decoration: none;
-              font-size: 14px;
-            }
-          }
-        }
-      }
-    }
-
     .columnas-login {
+      height: var(--height-header);
+      @include pading-0();
+
+      @media screen and(max-width:500px) {
+        padding-right: 2px;
+      }
+
       display: flex;
       align-items: center;
       justify-content: flex-end;
 
       .boton {
-        height: 75%;
-        margin-right: var(--margin-de-botones-de-header);
-        width: auto;
-        .v-btn__content {
-          font-weight: bold;
+        height: var(--antes-y);
+        width: var(--antes-x);
+        margin-right: var(--margen-botones-header);
+
+        border: none;
+        outline: none;
+
+        -webkit-transition-duration: 0.3s;
+
+        &:hover {
+          width: var(--despues-x);
+          height: var(--despues-y);
         }
       }
 
       .registro {
-        background-color: var(--color-boton-azul);
-        color: var(--color-azul);
+        --letra-header: #000;
+        --fondo-header: var(--color-boton-registro-amarillo);
+
+        background-color: var(--fondo-header);
+        font-family: "Galano";
+        font-weight: bold;
+        color: var(--letra-header);
+
+        &:hover {
+          --letra-header: var(--color-boton-registro-amarillo);
+          --fondo-header: #000;
+        }
+
+        &:active {
+          --letra-header: #000;
+          --fondo-header: var(--color-boton-registro-amarillo);
+        }
       }
 
       .login {
-        background-color: var(--color-azul);
-        color: #fff;
-      }
-    }
+        --letra-header: #888888;
+        --fondo-header: #fff;
 
-    .menu-oculto {
-      height: 10px;
-      .link {
-        color: #090909;
-        font-family: "Galano";
-        text-decoration: none;
+        color: var(--letra-header);
+        background-color: var(--fondo-header);
+
+        &:hover {
+          --letra-header: #fff;
+          --fondo-header: #888888;
+        }
+
+        &:active {
+          --letra-header: #888888;
+          --fondo-header: #fff;
+        }
       }
     }
   }
