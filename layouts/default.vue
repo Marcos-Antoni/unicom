@@ -37,6 +37,11 @@ export default {
   }
   list-style-type: none;
 
+  button {
+    border: none;
+    outline: none;
+  }
+
   // .row {
   //   max-width: 100vw;
   // }

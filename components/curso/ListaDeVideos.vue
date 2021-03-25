@@ -1,6 +1,6 @@
 <template>
   <div class="contenedor_de_material">
-    <div class="lista_videos">
+    <ContenedorBlanco class="lista_videos" scroll>
       <ul
         v-for="(parte, numero) in curso"
         :key="numero"
@@ -30,13 +30,18 @@
           ></div>
         </li>
       </ul>
-    </div>
+    </ContenedorBlanco>
+
     <button class="boton-preguntas">hola que hace :v</button>
   </div>
 </template>
 
 <script>
+import ContenedorBlanco from "../globales/ContenedorBlanco";
+
 export default {
+  components: { ContenedorBlanco },
+
   props: {
     curso: Array
   },
@@ -77,34 +82,14 @@ export default {
 
 .contenedor_de_material {
   .lista_videos {
-    background-color: #fff;
     color: #000;
     border-radius: 5px 10px;
     width: var(--tamano-contenido);
     max-height: 608px;
-    overflow-y: scroll;
-
-    box-shadow: var(--color-negro-de-videos) 0px 0px 20px;
 
     @media screen and (max-width: 960px) {
       box-shadow: none;
       max-height: 160px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #ccc;
-      border-radius: 10px;
-      height: 10px;
-      width: 100%;
-
-      &:hover,
-      &:active {
-        background-color: #bebebe;
-      }
     }
 
     .lista_videos_ul {
@@ -198,7 +183,8 @@ export default {
       }
 
       li {
-        width: 90%;
+        width: 93%;
+        transition-duration: 0.3s;
       }
     }
   }

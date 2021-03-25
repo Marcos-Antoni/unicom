@@ -31,6 +31,7 @@ export default {
   max-width: 100vw;
   background-color: #f8f8f8;
   z-index: 1;
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -39,7 +40,7 @@ export default {
     @include affter();
     background-image: url("/figuraIntegracion1.svg");
     width: 75px;
-    height: 250px;
+    height: 76px;
     top: 75px;
     left: 0px;
   }

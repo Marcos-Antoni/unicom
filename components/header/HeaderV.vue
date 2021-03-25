@@ -60,9 +60,9 @@ export default {
   --fondo-header: #000;
 
   --antes-x: 125px;
-  --antes-y: 60%;
+  --antes-y: 65%;
   --despues-x: 135px;
-  --despues-y: 70%;
+  --despues-y: 75%;
 
   --margen-botones-header: 20px;
   --margen-h1-header: 20px;
@@ -182,7 +182,8 @@ export default {
         border: none;
         outline: none;
 
-        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        z-index: 15;
 
         &:hover {
           width: var(--despues-x);

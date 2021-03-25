@@ -1,3 +1,5 @@
+import FunGlo from "../components/funciones/globales";
+
 export const state = () => ({
   listPopulares: [
     {
@@ -148,9 +150,107 @@ export const state = () => ({
       ]
     }
   ],
+
+  ListCompras: [
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 2,
+      nuevo: true,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso2.jpeg",
+
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: true,
+      precio: 0.07,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: false,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 2,
+      nuevo: true,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso2.jpeg",
+
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: true,
+      precio: 0.07,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: false,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 2,
+      nuevo: true,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso2.jpeg",
+
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: true,
+      precio: 0.07,
+      usos: 75,
+      cantidad: 1
+    },
+    {
+      img: "/cursos_de_prueva/curso1.jpeg",
+      titulo: "matemática Aplicadas",
+      profesor: "Juan Alverto",
+      univercidad: 1,
+      nuevo: false,
+      precio: 0.05,
+      usos: 75,
+      cantidad: 1
+    }
+  ],
+
   gratis: false,
   verificado: 0,
-  login: false
+  login: false,
+  precio_de_la_compra_total: 0
 });
 
 export const getters = {
@@ -160,6 +260,11 @@ export const getters = {
     });
 
     return listaDepurada;
+  },
+
+  precioDeCompra(state) {
+    let precio = FunGlo.sumarPrecios(state.ListCompras, "precio", false);
+    return precio;
   }
 };
 
@@ -174,5 +279,11 @@ export const mutations = {
 
   on_of_login(state) {
     state.login = !state.login;
+  },
+
+  new_total_de_la_compra(state, numero) {
+    if (Number(numero)) {
+      state.precio_de_la_compra_total = numero;
+    }
   }
 };
