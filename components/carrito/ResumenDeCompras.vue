@@ -16,7 +16,7 @@
             <p class="precio_item_li_resumen_carrito">S/{{ item.total }}</p>
           </li>
           <li class="li_ususario_resumen_compras">
-            huivdsaiodio28
+            huivdsaiodio2856
           </li>
 
           <li class="li_total_resumen_compras">
