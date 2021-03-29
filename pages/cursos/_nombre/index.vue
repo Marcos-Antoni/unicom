@@ -129,11 +129,17 @@ export default {
         .img_del_curso {
           @include centrar;
           position: relative;
+          margin-top: 20px;
 
           img {
             width: var(--tamano-width-de-descripcion-del-curso);
             height: 400px;
             border-radius: 10px;
+            background-size: cover;
+
+            @media screen and (max-width: 500px) {
+              width: 95%;
+            }
           }
 
           &::after {
