@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import VideoV from "../../../components/curso/VideoV";
-import Datos from "../../../components/globales/Datos";
-import FooterV from "../../../components/header/FooterV.vue";
-import FondoGris from "../../../components/globales/FondoGris";
-import Descripcion from "../../../components/curso/Descripcion";
-import ListaDeVideos from "../../../components/curso/ListaDeVideos";
+import VideoV from "../../../../components/curso/VideoV";
+import Datos from "../../../../components/globales/Datos";
+import FooterV from "../../../../components/header/FooterV.vue";
+import FondoGris from "../../../../components/globales/FondoGris";
+import Descripcion from "../../../../components/curso/Descripcion";
+import ListaDeVideos from "../../../../components/curso/ListaDeVideos";
 import { mapState } from "vuex";
 
 export default {
@@ -69,7 +69,6 @@ export default {
 
   computed: {
     ...mapState({
-      listPopulares: "listPopulares",
       ListaCurso: "ListaCurso"
     })
   },

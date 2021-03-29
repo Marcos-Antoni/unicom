@@ -5,6 +5,7 @@
     </section>
     <section id="componentes">
       <Componentes />
+      hola
     </section>
     <footer>
       <FooterV />

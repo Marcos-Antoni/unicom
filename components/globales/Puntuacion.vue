@@ -68,11 +68,13 @@ export default {
 </script>
 
 <style lang="scss">
+/* variables */
 :root {
   --tamano-de-estrella: 30px;
   --tamano-de-estrella-seleccionada: 35px;
   --tiempo-animacion: 0.3s;
 }
+
 .puntuacion {
   display: flex;
   align-items: flex-end;

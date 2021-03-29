@@ -1,6 +1,6 @@
 <template>
   <div class="contenedor_blanco" :class="scroll && `scroll`">
-    <slot>hola</slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   padding: 10px;
   width: 100%;
   box-shadow: #ccc 0px 0px 20px;
+  z-index: 10;
 }
 
 .scroll {

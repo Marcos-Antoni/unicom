@@ -1,5 +1,11 @@
 <template>
-  <div class="Descripcion" :style="`background:${color ? color : `#fff`}`">
+  <div
+    class="Descripcion"
+    :style="
+      `background-image:${img && img}
+      background:${color ? color : `#fff`}`
+    "
+  >
     <div class="contenido">
       <slot> </slot>
     </div>
@@ -10,7 +16,7 @@
 export default {
   components: {},
 
-  props: ["color"],
+  props: ["color", "img"],
 
   data() {
     return {};
@@ -29,7 +35,8 @@ export default {
   height: 250px;
   width: 100%;
   max-width: 100vw;
-  background-color: #f8f8f8;
+  background-size: 100% 300px;
+  background-repeat: no-repeat;
   z-index: 1;
   position: relative;
 

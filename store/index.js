@@ -1,3 +1,4 @@
+import FunStor from "../components/funciones/store";
 import FunGlo from "../components/funciones/globales";
 
 export const state = () => ({
@@ -250,7 +251,8 @@ export const state = () => ({
   gratis: false,
   verificado: 0,
   login: false,
-  precio_de_la_compra_total: 0
+  precio_de_la_compra_total: 0,
+  partes_del_curso: []
 });
 
 export const getters = {
@@ -265,6 +267,13 @@ export const getters = {
   precioDeCompra(state) {
     let precio = FunGlo.sumarPrecios(state.ListCompras, "precio", false);
     return precio;
+  },
+
+  ListaCursoEditada(state) {
+    const arrayOrdenado = FunStor.ordenarArray(state.partes_del_curso),
+      newListaCurso = FunStor.newArray(arrayOrdenado, state.ListaCurso);
+
+    return newListaCurso;
   }
 };
 
@@ -284,6 +293,12 @@ export const mutations = {
   new_total_de_la_compra(state, numero) {
     if (Number(numero)) {
       state.precio_de_la_compra_total = numero;
+    }
+  },
+
+  colocarar_partes_del_Curso(state, array) {
+    if (typeof array == "object") {
+      state.partes_del_curso = array;
     }
   }
 };
