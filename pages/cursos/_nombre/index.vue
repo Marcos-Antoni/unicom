@@ -76,7 +76,7 @@ export default {
   --tamano-de-logo-univercidad: 40px;
   --tamano-de-univercidad: 80px;
   --tamano-width-de-descripcion-del-curso: 80%;
-  --margen-de-lista-de-partes-de-cursos: -380px;
+  --margen-de-lista-de-partes-de-cursos: -370px;
   --left-de-univercidad: 5%;
   --left-de-logo-univercidad: 15%;
 
