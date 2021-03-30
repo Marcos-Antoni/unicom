@@ -212,6 +212,8 @@ export default {
       }
 
       .login {
+        font-family: "Helveltica";
+
         --letra-header: #888888;
         --fondo-header: #fff;
 

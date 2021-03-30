@@ -40,6 +40,7 @@ export default {
   button {
     border: none;
     outline: none;
+    font-family: "Galano";
   }
 
   // .row {

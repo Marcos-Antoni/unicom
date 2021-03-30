@@ -50,22 +50,19 @@ export default {
     margin-top: 50px;
     width: var(--tamano-contenido);
     height: 50px;
-    background-color: #f3f3f3;
+    background-color: var(--color-de-fonde-boton-gris);
     font-family: "Galano";
     font-size: 18px;
 
-    border: none;
-    outline: none;
-    transition: background-color 0.2s;
-    transition: font-size 0.2s;
+    transition-duration: 0.3s;
 
     &:hover {
-      background-color: #dfdfdf;
+      background-color: var(--color-de-fonde-boton-gris-seleccionado);
       font-size: 19px;
     }
 
     &:active {
-      background-color: #fafafa;
+      background-color: var(--color-de-fonde-boton-gris);
       font-size: 17px;
     }
   }

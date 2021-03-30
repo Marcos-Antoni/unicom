@@ -53,12 +53,6 @@ export default {
 </script>
 
 <style lang="scss">
-/* variables */
-:root {
-  --color-de-fonde-boton-curso: #0028bf;
-  --color-de-letra-boton-curso: #fff;
-}
-
 .formulario_de_partes_de_cursos {
   .lista_de_botones_de_curso {
     display: flex;
@@ -81,8 +75,8 @@ export default {
       button {
         margin-top: 20px;
 
-        background-color: var(--color-de-fonde-boton-curso);
-        color: var(--color-de-letra-boton-curso);
+        background-color: var(--color-de-fonde-boton-azul);
+        color: var(--color-de-letra-boton-azul);
         font-family: "Galano";
         font-size: 18px;
 
@@ -92,8 +86,8 @@ export default {
         transition-duration: 0.3s;
 
         &:hover {
-          background-color: var(--color-de-letra-boton-curso);
-          color: var(--color-de-fonde-boton-curso);
+          background-color: var(--color-de-letra-boton-azul);
+          color: var(--color-de-fonde-boton-azul);
           border: 2px solid #ccc;
         }
 
