@@ -1,5 +1,12 @@
 <template>
-  <PantallaNegra class="IniciarSesion" x="var(--tamano-delogin)" y="75%">
+  <PantallaNegra
+    @salir="on_off_login"
+    class="IniciarSesion"
+    x="var(--tamano-delogin)"
+    y="75%"
+    :on_off="login"
+    tipo_de_animacion="arriba"
+  >
     <div class="contenido-sesion">
       <h2>Iniciar sesion</h2>
 
@@ -39,6 +46,8 @@
 
 <script>
 import PantallaNegra from "../globales/PantallaNegra";
+/* vuex */
+import { mapState } from "vuex";
 
 export default {
   components: { PantallaNegra },
@@ -61,7 +70,17 @@ export default {
 
     noSalir() {
       this.comprobante = !this.comprobante;
+    },
+
+    on_off_login() {
+      const { commit } = this.$store;
+
+      commit("on_of_login");
     }
+  },
+
+  computed: {
+    ...mapState(["login"])
   }
 };
 </script>

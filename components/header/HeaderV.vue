@@ -105,9 +105,8 @@ export default {
 
 .arriba {
   height: 85px;
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
-  min-width: 100vw;
   display: block;
   background: #fff;
   box-shadow: 0 1px 10px #ccc;

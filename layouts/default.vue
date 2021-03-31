@@ -1,7 +1,11 @@
 <template>
   <div class="contenedor">
     <HeaderV class="header" />
-    <IniciarCecion v-show="login" />
+
+    <IniciarCecion />
+    <SubMenuDecompras />
+
+    <BotonDeCarrito />
     <nuxt class="nuxt" />
   </div>
 </template>
@@ -9,13 +13,15 @@
 <script>
 import HeaderV from "../components/header/HeaderV";
 import IniciarCecion from "../components/header/IniciarCesion";
+import BotonDeCarrito from "../components/carritoAnclado/BotonDeCarrito";
+import SubMenuDecompras from "../components/carritoAnclado/SubMenuDecompras";
 import { mapState } from "vuex";
 
 export default {
-  components: { HeaderV, IniciarCecion },
+  components: { HeaderV, IniciarCecion, BotonDeCarrito, SubMenuDecompras },
 
   computed: {
-    ...mapState(["login"])
+    ...mapState(["login", "activar_menu_compras"])
   }
 };
 </script>
@@ -50,6 +56,7 @@ export default {
 .titulo {
   @include titulo;
 }
+
 html,
 body {
   width: 100%;
@@ -71,12 +78,19 @@ body {
 }
 
 .contenedor {
-  /* .header {
-  } */
+  position: relative;
+
   .nuxt {
     margin: 0;
     height: 90%;
     z-index: 1;
+
+    transition-duration: 0.5s;
+  }
+
+  .header {
+    width: 100vw;
+    transition-duration: 0.5s;
   }
 }
 </style>

@@ -26,6 +26,9 @@
 
             <p class="cantidad_de_item_en_carrito">{{ item.cantidad }}</p>
           </li>
+          <li>
+            <slot></slot>
+          </li>
         </ul>
       </template>
     </ContenedorBlanco>

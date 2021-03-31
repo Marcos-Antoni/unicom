@@ -2,6 +2,7 @@ import FunStor from "../components/funciones/store";
 import FunGlo from "../components/funciones/globales";
 
 export const state = () => ({
+  /* ejemplo de listas */
   listPopulares: [
     {
       img: "/cursos_de_prueva/curso1.jpeg",
@@ -249,10 +250,12 @@ export const state = () => ({
   ],
 
   gratis: false,
-  verificado: 0,
   login: false,
   precio_de_la_compra_total: 0,
-  partes_del_curso: []
+  partes_del_curso: [],
+
+  // sub menu compras
+  activar_menu_compras: false
 });
 
 export const getters = {
@@ -282,10 +285,6 @@ export const mutations = {
     state.gratis = boolean;
   },
 
-  modificar_verificacion(state, tipo) {
-    state.verificado = tipo;
-  },
-
   on_of_login(state) {
     state.login = !state.login;
   },
@@ -300,5 +299,9 @@ export const mutations = {
     if (typeof array == "object") {
       state.partes_del_curso = array;
     }
+  },
+
+  on_of_menu_carrito(state) {
+    state.activar_menu_compras = !state.activar_menu_compras;
   }
 };

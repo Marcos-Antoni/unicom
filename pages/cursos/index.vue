@@ -1,12 +1,13 @@
 <template>
   <div class="tienda">
-    <section id="buscador">
+    <h2>no hay nada</h2>
+    <!-- <section id="buscador">
       <Buscador />
     </section>
     <section id="componentes">
       <Componentes />
       hola
-    </section>
+    </section> -->
     <footer>
       <FooterV />
     </footer>
