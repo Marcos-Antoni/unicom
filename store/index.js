@@ -48,7 +48,8 @@ export const state = () => ({
       img: "/profesores/prof1.jpeg",
       nombre: "Andrea Meza",
       profecion: "Derech",
-      univercidad: 2
+      univercidad: 2,
+      anos: 30
     },
     {
       img: "/profesores/prof2.jpeg",

@@ -1,5 +1,5 @@
 <template>
-  <div class="div">
+  <div class="componente">
     <h2>hola mundo</h2>
   </div>
 </template>
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style lang="scss">
-.div {
+.componente {
   background: red;
 }
 </style>

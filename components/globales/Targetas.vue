@@ -13,9 +13,7 @@
         <p class="tutulo-de-la-clase">
           {{ obgeto.titulo }}
         </p>
-        <div class="precio titulo">
-          <h2>{{ obgeto.profesor }}</h2>
-        </div>
+        <h2>{{ obgeto.profesor }}</h2>
       </div>
     </v-container>
   </v-card>

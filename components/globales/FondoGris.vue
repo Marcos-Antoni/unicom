@@ -1,9 +1,12 @@
 <template>
   <div
     class="Descripcion"
+    :class="!oof_affters && `on_affters`"
     :style="
-      `background-image:${img && img}
-      background:${color ? color : `#fff`}`
+      `
+      background-image:${img ? img : `none`}
+      background:${color ? color : `#fff`}
+      `
     "
   >
     <div class="contenido">
@@ -16,7 +19,7 @@
 export default {
   components: {},
 
-  props: ["color", "img"],
+  props: { color: String, img: String, oof_affters: Boolean },
 
   data() {
     return {};
@@ -35,7 +38,7 @@ export default {
   height: 250px;
   width: 100%;
   max-width: 100vw;
-  background-size: 100% 300px;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   position: relative;
@@ -43,6 +46,16 @@ export default {
   display: flex;
   justify-content: center;
 
+  .contenido {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 97%;
+  }
+}
+
+.on_affters {
   &::after {
     @include affter();
     background-image: url("/figuraIntegracion1.svg");
@@ -59,14 +72,6 @@ export default {
     height: 54px;
     top: 75px;
     right: 0;
-  }
-
-  .contenido {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 97%;
   }
 }
 </style>
