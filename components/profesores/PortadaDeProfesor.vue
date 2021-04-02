@@ -68,7 +68,7 @@ export default {
         margin-left: var(--margen-left-de-informacion-de-profesor);
         margin-bottom: 3px;
 
-        color: #fff;
+        color: #ffff;
 
         .img_de_profesor {
           position: absolute;
