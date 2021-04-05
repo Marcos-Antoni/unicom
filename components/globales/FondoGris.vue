@@ -36,10 +36,9 @@ export default {
 
 .Descripcion {
   height: 250px;
-  width: 100%;
-  max-width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: auto;
+  background-size: 100% 100%;
+  // background-repeat: no-repeat;
   z-index: 1;
   position: relative;
 

@@ -5,13 +5,13 @@
     </section>
 
     <v-row class="contenedor_de_contenido">
-      <v-col md="3" sm="4" cols="12">
+      <v-col md="3" sm="5" cols="12">
         <section id="verificaciones_del_profesor">
           <VerificasionP />
         </section>
       </v-col>
 
-      <v-col md="9" sm="8" cols="12">
+      <v-col md="9" sm="7" cols="12">
         <section id="Informacion_del_profesor">
           <InformacionP />
         </section>
@@ -46,16 +46,17 @@ export default {
 
   data() {
     return {
-      img: "url(/profesores/imagenDeInicio.svg)"
+      img: "url(/profesores/imagenDeInicio.png)"
     };
   }
 };
 </script>
 
 <style lang="scss">
+/* variables */
 :root {
   --padding-a-los-lados: 2vw;
-  --margen-top-de-profesor: 88px;
+  --margen-top-de-profesor: 58px;
 
   @media screen and (max-width: 599px) {
     --padding-a-los-lados: 0;

@@ -41,12 +41,14 @@ export default {
   --left-de-imagen-de-profesor: -175px;
   --top-de-imagen-de-profesor: -3px;
   --align-items-de-profesor: flex-start;
+  --margin-bottom-de-informacipon-de-profesor: 30px;
 
   @media screen and (max-width: 599px) {
     --margen-left-de-informacion-de-profesor: 0px;
     --left-de-imagen-de-profesor: 0;
     --top-de-imagen-de-profesor: -170px;
     --align-items-de-profesor: center;
+    --margin-bottom-de-informacipon-de-profesor: 5px;
   }
 }
 
@@ -66,7 +68,7 @@ export default {
         height: auto;
         width: auto;
         margin-left: var(--margen-left-de-informacion-de-profesor);
-        margin-bottom: 3px;
+        margin-bottom: var(--margin-bottom-de-informacipon-de-profesor);
 
         color: #ffff;
 
@@ -103,7 +105,7 @@ export default {
           }
 
           li {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
           }
         }
       }

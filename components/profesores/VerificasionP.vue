@@ -13,11 +13,7 @@
           <p class="titulo">{{ item.nombre }}</p>
 
           <ul class="items">
-            <li
-              class="titulo"
-              v-for="(nombre, numero) in item.respuesta"
-              :key="numero"
-            >
+            <li v-for="(nombre, numero) in item.respuesta" :key="numero">
               {{ nombre }}
             </li>
           </ul>
@@ -63,12 +59,50 @@ export default {
 <style lang="scss">
 /* variables */
 :root {
-  --tamano-de-affter-verificacion: 30px;
-  --tamano-de-titulos: 18px;
+  --tamano-de-affter-verificacion: 25px;
+  --tamano-de-titulos: 15px;
   --tamano-de-informacion-de-clases: auto;
+  --tamano-de-li-de-informacion: 85%;
+  --bottom-de-affter-separador: -13px;
+  --width-de-affter-separador: 115%;
+  --right-de-affter-verificar: -15%;
+
+  @media screen and (max-width: 1060px) {
+    --tamano-de-li-de-informacion: 96.4%;
+    --width-de-affter-separador: 105%;
+    --tamano-de-titulos: 15px;
+    --right-de-affter-verificar: -8%;
+    --tamano-de-affter-verificacion: 20px;
+  }
+
+  @media screen and (max-width: 980px) {
+    --right-de-affter-verificar: -10%;
+  }
+
+  @media screen and (max-width: 959px) {
+    --tamano-de-titulos: 18px;
+    --tamano-de-li-de-informacion: 85%;
+    --width-de-affter-separador: 115%;
+    --tamano-de-affter-verificacion: 25px;
+  }
+
+  @media screen and (max-width: 739px) {
+    --tamano-de-titulos: 15px;
+    --tamano-de-affter-verificacion: 25px;
+    --tamano-de-li-de-informacion: 90%;
+    --width-de-affter-separador: 105%;
+  }
+
+  @media screen and (max-width: 608px) {
+    --tamano-de-li-de-informacion: 91%;
+  }
 
   @media screen and (max-width: 599px) {
     --tamano-de-informacion-de-clases: 200px;
+    --tamano-de-affter-verificacion: 30px;
+    --tamano-de-li-de-informacion: 85%;
+    --bottom-de-affter-separador: -12px;
+    --width-de-affter-separador: 115%;
   }
 }
 
@@ -88,24 +122,24 @@ export default {
 
   .verificacones_de_P {
     ul {
-      margin-top: 10px;
+      // margin-top: 0px;
 
       .espacio {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         &::before {
           @include affter();
           background-color: #ccc;
-          width: 115%;
+          width: var(--width-de-affter-separador);
           height: 3px;
 
-          bottom: -10px;
+          bottom: var(--bottom-de-affter-separador);
         }
       }
 
       li {
         font-size: var(--tamano-de-titulos);
-        width: 85%;
+        width: var(--tamano-de-li-de-informacion);
         position: relative;
 
         &::after {
@@ -116,7 +150,7 @@ export default {
           height: var(--tamano-de-affter-verificacion);
 
           top: 0px;
-          right: -15%;
+          right: var(--right-de-affter-verificar);
         }
       }
 
@@ -139,30 +173,34 @@ export default {
     height: var(--tamano-de-informacion-de-clases);
 
     .contenedor_info {
-      margin-top: 20px;
+      margin-top: 5px;
 
       .informacion {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         .titulo {
-          font-size: var(--tamano-de-titulos);
+          font-size: 14px;
         }
 
         .items {
           display: flex;
           flex-wrap: wrap;
+          margin-top: 5px;
 
           li {
-            background-color: #62b7f056;
+            background-color: rgba(0, 87, 255, 0.08);
             color: var(--color-azul);
-            padding: 0px 8px;
+            padding: 5px 10px;
+            border-radius: 3px;
 
             width: auto;
             height: auto;
             margin-right: 10px;
             margin-bottom: 5px;
 
-            font-size: 15px;
+            font-size: 11px;
+            margin-bottom: 3px;
+            font-weight: bold;
           }
         }
 

@@ -30,37 +30,32 @@ export default {
 /* variables */
 :root {
   --tamano-de-signo-de-almiracion: 28px;
-  --margen-de-affter-de-sigono-de-almiracion: -35px;
-  --margen-de-h2-de-sigono-de-almiracion: var(
-    --margen-de-affter-de-sigono-de-almiracion
-  );
+  --margen-de-affter-de-sigono-de-almiracion: 35px;
+  --top-de-signo-de-almiracion: 5px;
+
   --tamano-letra-de-h2-profesor-informacion: 18px;
   --displey-de-sigono-de-almiracion: block;
-  --top-de-signo-de-almiracion: 0;
 
   @media screen and (max-width: 960px) {
-    --margen-de-h2-de-sigono-de-almiracion: 0;
     --displey-de-sigono-de-almiracion: none;
   }
 
   @media screen and (max-width: 599px) {
     --displey-de-sigono-de-almiracion: block;
-    --margen-de-h2-de-sigono-de-almiracion: 0;
     --tamano-letra-de-h2-profesor-informacion: 14px;
-    --margen-de-h2-de-sigono-de-almiracion: -30px;
-    --top-de-signo-de-almiracion: -1px;
+    --top-de-signo-de-almiracion: 3.5px;
     --tamano-de-signo-de-almiracion: 25px;
+    --margen-de-affter-de-sigono-de-almiracion: 1%;
   }
 
-  @media screen and (max-width: 435px) {
-    --margen-de-h2-de-sigono-de-almiracion: 0;
+  @media screen and (max-width: 468px) {
     --displey-de-sigono-de-almiracion: none;
   }
 
   @media screen and (max-width: 400px) {
     --displey-de-sigono-de-almiracion: block;
-    --margen-de-affter-de-sigono-de-almiracion: 35px;
-    --top-de-signo-de-almiracion: 20px;
+    --margen-de-affter-de-sigono-de-almiracion: 3%;
+    --top-de-signo-de-almiracion: 24px;
   }
 }
 
@@ -77,6 +72,7 @@ export default {
     height: auto;
     padding: 5px 0;
     margin-bottom: 25px;
+    position: relative;
 
     background: var(--color-azul);
     color: #fff;
@@ -85,21 +81,19 @@ export default {
     justify-content: center;
     align-items: center;
 
-    h2 {
-      position: relative;
-      font-size: var(--tamano-letra-de-h2-profesor-informacion);
-      margin-right: var(--margen-de-h2-de-sigono-de-almiracion);
-      text-align: center;
+    &::after {
+      @include affter();
+      background-image: url(/interrogacion.svg);
+      background-size: cover;
+      width: var(--tamano-de-signo-de-almiracion);
+      height: var(--tamano-de-signo-de-almiracion);
+      left: var(--margen-de-affter-de-sigono-de-almiracion);
+      top: var(--top-de-signo-de-almiracion);
+    }
 
-      &::after {
-        @include affter();
-        background-image: url(/interrogacion.svg);
-        background-size: cover;
-        width: var(--tamano-de-signo-de-almiracion);
-        height: var(--tamano-de-signo-de-almiracion);
-        left: var(--margen-de-affter-de-sigono-de-almiracion);
-        top: var(--top-de-signo-de-almiracion);
-      }
+    h2 {
+      font-size: var(--tamano-letra-de-h2-profesor-informacion);
+      text-align: center;
     }
   }
 

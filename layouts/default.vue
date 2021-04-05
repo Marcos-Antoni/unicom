@@ -52,6 +52,12 @@ export default {
   // .row {
   //   max-width: 100vw;
   // }
+
+  max-width: 100vw;
+
+  @media screen and (min-width: 1600px) {
+    max-width: 1600px;
+  }
 }
 .titulo {
   @include titulo;
@@ -83,6 +89,7 @@ body {
   .nuxt {
     margin: 0;
     height: 90%;
+    max-width: 1600px;
     z-index: 1;
 
     transition-duration: 0.5s;
@@ -90,6 +97,7 @@ body {
 
   .header {
     width: 100vw;
+    max-width: 1600px;
     transition-duration: 0.5s;
   }
 }
